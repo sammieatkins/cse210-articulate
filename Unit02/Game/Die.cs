@@ -13,19 +13,40 @@ namespace Unit02.Game
         /// worth.
         /// </summary> 
 
+        public class Die
+        {
+            public int points;
+            public int value;
 
-    // 2) Create the class constructor. Use the following method comment.
+            // 2) Create the class constructor. Use the following method comment.
+            /// <summary>
+            /// Constructs a new instance of Die.
+            /// </summary>
+            public Die()
+            {
+            }
 
-        /// <summary>
-        /// Constructs a new instance of Die.
-        /// </summary>
+            /// <summary>
+            /// Generates a new random value and calculates the points for the die. Fives are 
+            /// worth 50 points, ones are worth 100 points, everything else is worth 0 points.
+            /// </summary>
+            public void Roll()
+            {
+                Random rnd = new Random();
+                value = rnd.Next(1, 7); // returns random integers >= 10 and < 20
 
-    
-    // 3) Create the Roll() method. Use the following method comment.
-        
-        /// <summary>
-        /// Generates a new random value and calculates the points for the die. Fives are 
-        /// worth 50 points, ones are worth 100 points, everything else is worth 0 points.
-        /// </summary>
-        
+                if (value == 5)
+                {
+                    points = 50;
+                }
+                else if (value == 1)
+                {
+                    points = 100;
+                }
+                else
+                {
+                    points = 0;
+                }
+            }
+        }       
 }
